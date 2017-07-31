@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_margin="@dimen/margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <!--프로필 이미지-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_iv"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_width="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"/>
+
+
+    <!--산책 기록 날짜-->
+    <TextView
+        android:id="@+id/today_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_half"
+        android:text="2017월 07일 28일"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/profile_iv"
+        app:layout_constraintTop_toTopOf="@+id/profile_iv"/>
+
+    <!--산책 시작 ~ 종료 시간-->
+
+    <TextView
+        android:id="@+id/start_end_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_half"
+        android:gravity="center_vertical"
+        android:text="14:00:00 - 15:00:00"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_iv"
+        app:layout_constraintEnd_toStartOf="@+id/walk_time_tv"
+        app:layout_constraintStart_toEndOf="@+id/profile_iv"
+        app:layout_constraintTop_toBottomOf="@+id/today_tv"/>
+
+    <!--산책 시간-->
+
+    <TextView
+        android:id="@+id/walk_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:drawableStart="@drawable/ic_watch"
+        android:gravity="center_vertical"
+        android:text="10분"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/start_end_tv"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toEndOf="@+id/start_end_tv"
+        app:layout_constraintTop_toTopOf="@+id/start_end_tv"/>
+
+    <!--산책 기록 삭제-->
+    <TextView
+        android:id="@+id/delete_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/today_tv"/>
+
+
+</android.support.constraint.ConstraintLayout>
