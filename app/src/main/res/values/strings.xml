@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">WalkTime</string>
+	<string name="app_name">WalkTime</string>
+	<string name="title_activity_diary">DiaryActivity</string>
+	<string name="title_activity_main">MainActivity</string>
+	
+	
+	<!--일기 페이지-->
+	<!--이미지 등록 요청 문구-->
+	<string name="hint_image">오늘의 사진을 넣어주세요</string>
+	<!--일기 내용 힌트 문구-->
+	<string name="hint_content">반려견과 함께한 당신의 하루를 기록하세요.</string>
+	<!--일기 등록 일자 테스트용 힌트-->
+	<string name="hint_date">2017년 08월 01일</string>
+	<string name="title_activity_test">testActivity</string>
+	
+	<!--하단 네비게이션 메뉴 이름-->
+
+
 </resources>

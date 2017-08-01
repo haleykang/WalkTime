@@ -70,7 +70,7 @@ public class ChronometerActivity extends AppCompatActivity {
             }
         });
 
-
+        // openDB();
         // 데이터베이스 오픈 -> onStart() 함수로 이동
         /*    mWalkTimeDBHelper = new WalkTimeOpenHelper(mContext);
         try {
@@ -190,9 +190,11 @@ public class ChronometerActivity extends AppCompatActivity {
                 mStatus = INIT;
                 // 6) 데이터베이스에 산책 내용 저장
                 openDB();
+                Log.v(TAG, "Open DataBase");
                 WalkTimeVO walkTimeVO = new WalkTimeVO(mStart, mEnd, mWalkTime);
                 mWalkTimeDBHelper.insertTime(walkTimeVO);
                 mWalkTimeDBHelper.close();
+                Log.v(TAG, "Close DataBase");
 
                 // 7) 리스트 페이지로 이동 / 또는 메인 페이지로 이동
                 startActivity(new Intent(mContext, TimeListActivity.class));
@@ -260,6 +262,7 @@ public class ChronometerActivity extends AppCompatActivity {
 
         // 사용할 때 위치로 변경 -> 홈 화면으로 이동했다가 다시 앱으로 들어올 때마다 DB가 오픈됨
         /* // 데이터 베이스 오픈
+
         mWalkTimeDBHelper = new WalkTimeOpenHelper(mContext);
         try {
             mWalkTimeDBHelper.open();
@@ -293,12 +296,13 @@ public class ChronometerActivity extends AppCompatActivity {
         Log.v(TAG, "Call onRestart()");
         // 재시작 했을 때 크로노미터 00:00:00으로 셋팅
         mChronometer.setText(String.valueOf("00:00:00"));
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mWalkTimeDBHelper.close();
+        // mWalkTimeDBHelper.close();
         Log.v(TAG, "Call onDestroy()");
     }
 }

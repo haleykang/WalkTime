@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context="mydog.haley.com.walktime.activity.DiaryActivity">
+	
+	
+	<!--반려견 일기 작성 페이지-->
+	<!--나중에 툴바 이용해서 액션바에 X(취소) V(저장) 버튼 추가 -->
+	
+	
+	<!--타이틀 -> 뺄까? -->
+	<!--이미지 뷰 : 타이틀 부분과 겹치게-->
+	<ImageView
+		android:id="@+id/image_view"
+		android:layout_width="0dp"
+		android:layout_height="320dp"
+		android:adjustViewBounds="true"
+		android:background="@color/colorBasic"
+		android:scaleType="centerCrop"
+		app:layout_constraintBottom_toTopOf="@+id/content_tv"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+	
+	<!--이미지 추가 설명 텍스트-->
+	<!--이 부분은 힌트로만 실제 클릭 이벤트는 이미지뷰 전체에 등록 -->
+	<TextView
+		android:id="@+id/image_tv"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:drawablePadding="@dimen/padding"
+		android:drawableTop="@drawable/ic_add_a_photo"
+		android:hint="@string/hint_image"
+		android:textColorHint="#ffffff"
+		android:textSize="17dp"
+		android:textStyle="italic"
+		app:layout_constraintBottom_toBottomOf="@+id/image_view"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+	
+	
+	<!--에디트 뷰 : 산책 내용 / 반려견과 함께한 당신의 오늘을 기록해주세요 -->
+	<!--최대 5줄까지 -> 아니면 max없이??-->
+	
+	<EditText
+		android:id="@+id/content_tv"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:background="@null"
+		android:gravity="top"
+		android:hint="@string/hint_content"
+		android:lineSpacingExtra="@dimen/spacing_line"
+		android:maxLines="5"
+		android:padding="@dimen/padding"
+		android:textSize="17dp"
+		android:textStyle="italic"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/image_view"/>
+	
+	<!--오늘 날짜 2017년 08월 01일-->
+	<TextView
+		android:layout_width="0dp"
+		android:layout_height="50dp"
+		android:gravity="bottom|end"
+		android:hint="@string/hint_date"
+		android:padding="@dimen/padding"
+		android:textSize="16dp"
+		android:textStyle="italic"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

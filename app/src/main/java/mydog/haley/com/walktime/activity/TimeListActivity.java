@@ -52,6 +52,7 @@ public class TimeListActivity extends AppCompatActivity {
         mDBHelper = new WalkTimeOpenHelper(mContext);
         try {
             mDBHelper.open();
+            Log.v(TAG, "Open DataBase");
         } catch(SQLException e) {
             Log.e(TAG, "Exception - DateBase open", e);
         }
@@ -173,6 +174,7 @@ public class TimeListActivity extends AppCompatActivity {
 
         Log.v(TAG, "Call onDestroy()");
         mDBHelper.close();
+        Log.v(TAG, "Close DataBase");
         super.onDestroy();
     }
 }
